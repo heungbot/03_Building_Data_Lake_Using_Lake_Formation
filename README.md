@@ -41,3 +41,41 @@
 
 ## [ 04 다이어 그램 ] 
 <img width="1401" alt="DataLake_diagram" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/4a2ee15c-0245-49ab-883b-f26d9326ac83">
+
+
+## [ 04 다이어 그램 ] 
+<img width="1401" alt="DataLake_diagram" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/4a2ee15c-0245-49ab-883b-f26d9326ac83">
+
+## [ 05 핵심 서비스 ]
+
+### 01 Ingest
+1. Storage Gateway : Cloud 기반 스토리지와 On premise를 연결하여 데이터 동합을 제공하는 서비스.
+
+2. DB Snaphost : 특정 시점의 DB의 상태를 파일이나 이미지로 저장
+* AWS Console에서 수동으로 snapshot을 bucket에 저장하거나 AWS CLI를 사용할 수 있음.
+
+3. Kinesis Firehose : 스트리밍 데이터를 Data Store나 분석 도구에 로드하기 위한 완전관리형 서비스. 
+* 자동으로 Scaling되는 Serverless Service
+* 다양한 데이터 포맷의 변환, 압축, 병합을 지원.
+*  AWS Service(S3, Redshift, ElasticSearch)와 써드 파티, HTTP Endpoint에 데이터를 전송할 수 있다.
+
+
+### 02 Data Lake
+0. Data Lake : 분석 목적을 위해 모든 데이터를 한 곳에 모아주는 중앙 집중식 저장소
+
+1. Lake Formation : 데이터 분석 및 기계학습을 위한 데이터를 중앙에서 관리하고, 보호할 수 있는 완전 관리형 Serverless 서비스
+* AWS Glue Catalog를 사용하여 중앙집중 방식으로 메타 데이터와 데이터 권한을 관리할 수 있음.
+* 한 곳에 모든 데이터를 저장하지만, IAM과의 통합으로 User 수준의 보안 설정 및 Row, Column 기반의 세분화된 엑세스 컨트롤을 부여.
+* AWS 서비스 이므로 CloudTrail, CloudWatch와 연동하여 모니터링 가능
+* BluePrint를 이용하여 S3, RDS, NoSQL DB등 과의 손쉬운 연동 가능 
+
+2. Glue : 머신 러닝, 데이터 분석, 어플리케이션 개발을 위한 데이터를 탐색, ETL을 지원하는 Serverless 데이터 통합 서비스. 
+* 중앙 메타데이터 레포지토리인 Data Catalog로 구성되어 있음. 
+* Crawler를 통해 데이터 스토어를 스캔하고 스키마와 파티션 구조를 자동으로 추론함. 이 결과를 Data Catalog에 저장.
+* ETL 엔진은 자동으로 Scala or Python Script를 생성하고, 사용자는 이를 수정하여 요구사항에 맞게 수정 가능
+
+
+### 03 Analysis
+1. Athena
+2. OpenSearch
+
