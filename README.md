@@ -295,6 +295,7 @@ aws rds describe-export-tasks
 * S3 bucket을 선택했으며 저장할 형식은 "Parquet"으로 선정
 * 실제 운영되는 데이터에 적용하는 것이었다면 압축을 진행
 
+
 <img width="506" alt="04_etl_job_script" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/8e0eac13-576e-42a2-8336-744541c9a819">
 
 *  변환 ETL 과정에 대한 Script. Visual ETL 보다 세부적인 조정 가능
