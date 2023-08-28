@@ -310,7 +310,7 @@ aws rds describe-export-tasks
 * Language는 Python, Scala를 지원함
 * ETL Job에 대한 IAM Role을 부여해야 함. 이 role은 source가 되는 Glue의 권한과 target인 s3에 대한 권한을 가져야 함.
 
- 
+
 ```
 {
     "Version": "2022-08-28",
