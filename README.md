@@ -116,20 +116,10 @@
 
 * 내보낼 S3 Bucket은 Snapshot과 동일한 Region에 위치해야 함
 
-* RDS의 Snapshot을 S3 Bucket으로 내보내기 위해선 S3 bucket에 대한 아래의 권한이 필요함 
-  
-s3:PutObject*
+* RDS의 Snapshot을 S3 Bucket으로 내보내기 위해선 S3 bucket에 대한 권한이 필요함
 
-s3:GetObject*
 
-s3:ListBucket
-
-s3:DeleteObject*
-
-s3:GetBucketLocation
-  
-
-2-1. Snapshot Export을 위한 IAM Policy 생성
+##### 2-1. Snapshot Export을 위한 IAM Policy 생성
 
 
 ```
@@ -157,7 +147,7 @@ aws iam create-policy  --policy-name [POLICY_NAME] --policy-document '{
 * 위 명령어에서 [BUCKET_NAME] 부분과 [POLICY_NAME]은 사용자가 직업 입력 
 
 
-2-2 Policy를 연결할 Role 생성 및 연결
+##### 2-2 Policy를 연결할 Role 생성 및 연결
 
 ```
 aws iam create-role  --role-name [ROLE_NAME]  --assume-role-policy-document '{
@@ -187,7 +177,7 @@ aws iam attach-role-policy  --policy-arn [POLICY_ARN]  --role-name [ROLE_NAME]
 aws iam list-policies --query 'Policies[?PolicyName==`[POLICY_NAME]`].Arn'
 ```
 
-2-3 DB Snapshot 추출
+##### 2-3 DB Snapshot 추출
 * 작업을 수행하기 위해서 위에서 생성한 IAM Role ARN과 전송 중 암호화를 위한 KMS KEY ARN을 인자로 넣어줘야 함
 
 ```
@@ -202,10 +192,10 @@ aws rds start-export-task \
 * [SNAPSHOT_EXTRACT_TASK_IDENTIFIER], [SNAPSHOT_NAME]은 사용자가 정의. 나머지 인자들은 실제 Value로 넣어줘야 함.
 * [BUCKET_PERFIX] 옵션은 선택이며, 나머지 인자는 필수적
 * Snapshot을 추출하는 데는 시간이 소요되므로 아래의 명령어를 통해 현 진행 상황을 파악할 수 있음.
+
 ```
 aws rds describe-export-tasks
 ```
-2-4. 
 
 
 4. 
