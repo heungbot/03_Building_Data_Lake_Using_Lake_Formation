@@ -105,13 +105,13 @@
 
 ### [ 06-1 Ingest ] 
 
-1. Storage Gateway 
+#### 1. Storage Gateway 
 * Storage Gateway를 이용하여 On Premise의 데이터를 S3로 적재하는 것은 [02_Hybrid_Data_integration_using_File_Gateway] 프로젝트에서 구현
 
 [ Github Link ] https://github.com/heungbot/02_Hybrid_Data_integration_using_File_Gateway
 
 
-2. DB Snapshot
+#### 2. DB Snapshot
 * AWS Console에서 진행하는 방법과 AWS CLI를 사용하여 Snaphost을 Bucket으로 내보내는 방법이 존재
 * RDS의 Snapshot을 S3 Bucket으로 내보내기 위해선 S3 bucket에 대한 아래의 권한이 필요함
 s3:PutObject*
