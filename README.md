@@ -112,7 +112,10 @@
 
 
 #### 2. DB Snapshot
-* AWS Console에서 진행하는 방법과 AWS CLI를 사용하여 Snaphost을 Bucket으로 내보내는 방법이 존재 (내보낼 S3 Bucket은 Snapshot과 동일한 Region에 위치해야 함)
+* AWS Console에서 진행하는 방법과 AWS CLI를 사용하여 Snaphost을 Bucket으로 내보내는 방법이 존재 
+
+cf) (내보낼 S3 Bucket은 Snapshot과 동일한 Region에 위치해야 함)
+
 * RDS의 Snapshot을 S3 Bucket으로 내보내기 위해선 S3 bucket에 대한 아래의 권한이 필요함 
   
 s3:PutObject*
