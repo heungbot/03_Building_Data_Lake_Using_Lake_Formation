@@ -44,7 +44,7 @@
 
 * Ingset 영역에서 DMS, Data Sync, 다른 Kinesis 서비스 등을 사용 가능
 * ETL 과정에서 Glue만 사용했지만 EMR도 고려 가능함. 또한 Glue ETL 작업을 Wrokflow를 통해 제어 및 On-demand 방식이 아닌 특정 조건에 따라 실행도 가능
-* Analysis 영역에서 ML을 진행할 때, Sage Maker를 고려할 수 있으며, Athena의 결과를 QuickSight를 통해 시각화 가능
+* Analysis 영역에서 ML을 진행할 때 Sage Maker를 고려할 수 있으며, Athena의 결과를 QuickSight를 통해 시각화 가능
 
 
 ***
