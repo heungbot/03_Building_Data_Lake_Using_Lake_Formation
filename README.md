@@ -108,8 +108,9 @@
 #### 1. Storage Gateway 
 * Storage Gateway를 이용하여 On Premise의 데이터를 S3로 적재하는 것은 [02_Hybrid_Data_integration_using_File_Gateway] 프로젝트에서 구현
 
-[ Github Link ] https://github.com/heungbot/02_Hybrid_Data_integration_using_File_Gateway
+[ heungbot project Github Link ] https://github.com/heungbot/02_Hybrid_Data_integration_using_File_Gateway
 
+***
 
 #### 2. DB Snapshot
 * AWS Console에서 진행하는 방법과 AWS CLI를 사용하여 Snaphost을 Bucket으로 내보내는 방법이 존재 
@@ -276,6 +277,8 @@ aws rds describe-export-tasks
 <img width="872" alt="08_Crawler_Create_Table" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/106066c2-ef09-4ebd-84f6-9419e925271b">
 
 * Crawler의 실행이 끝나면, Catalog에 Schema, Partiion, Index에 대한 정보가 저장됨을 확인
+
+***
 
 #### 5. ETL JOB Source 선택
 
