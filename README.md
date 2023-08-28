@@ -366,7 +366,6 @@ aws rds describe-export-tasks
 
 * ETL 작업이 성공적으로 수행됨
 
-
 <img width="620" alt="ETL_Script_Logs_Bucket" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/004f5c6d-3f8d-42b6-8601-164bc5d9e17f">
 
 * ETL 작업이 완료되면, 위에서 설정한 bucket PATH에 sciprt, log 폴더가 생성됨. 
