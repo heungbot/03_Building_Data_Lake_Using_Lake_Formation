@@ -131,7 +131,7 @@ s3:GetBucketLocation
 
 2-1. IAM Policy 생성
 
-₩₩₩
+```
 aws iam create-policy  --policy-name ExportPolicy --policy-document '{
     "Version": "2012-10-17",
     "Statement": [
@@ -152,7 +152,7 @@ aws iam create-policy  --policy-name ExportPolicy --policy-document '{
         }
     ]
 }'
-₩₩₩
+```
 
 
 
