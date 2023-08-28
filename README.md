@@ -42,6 +42,8 @@
 ## [ 04 다이어 그램 ] 
 <img width="1401" alt="DataLake_diagram" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/4a2ee15c-0245-49ab-883b-f26d9326ac83">
 
+***
+
 ## [ 05 핵심 서비스 ]
 
 ### 01 Ingest
@@ -58,6 +60,7 @@
 * 다양한 데이터 포맷의 변환, 압축, 병합을 지원.
 *  AWS Service(S3, Redshift, ElasticSearch)와 써드 파티, HTTP Endpoint에 데이터를 전송할 수 있다.
 
+***
 
 ### 02 Data Lake
 
@@ -76,6 +79,7 @@
 * Crawler를 통해 데이터 스토어를 스캔하고 스키마와 파티션 구조를 자동으로 추론함. 이 결과를 Data Catalog에 저장.
 * ETL 엔진은 자동으로 Scala or Python Script를 생성하고, 사용자는 이를 수정하여 요구사항에 맞게 수정 가능
 
+***
 
 ### 03 Analysis
 
