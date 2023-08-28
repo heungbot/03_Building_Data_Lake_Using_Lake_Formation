@@ -129,10 +129,11 @@ s3:DeleteObject*
 s3:GetBucketLocation
   
 
-2-1. IAM Policy 생성
+2-1. Snapshot Export을 위한 IAM Policy 생성
+
 
 ```
-aws iam create-policy  --policy-name ExportPolicy --policy-document '{
+aws iam create-policy  --policy-name [POLICY_NAME] --policy-document '{
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -146,16 +147,44 @@ aws iam create-policy  --policy-name ExportPolicy --policy-document '{
                 "s3:GetBucketLocation"
             ],
             "Resource": [
-                "arn:aws:s3:::your-s3-bucket",
-                "arn:aws:s3:::your-s3-bucket/*"
+                "arn:aws:s3:::[BUCKET_NAME]",
+                "arn:aws:s3:::[BUCKET_NAME]/*"
             ]
         }
     ]
 }'
 ```
+* 위 명령어에서 BUCKET_NAME 부분과 POLICY_NAME은 사용자가 직업 입력 
 
 
+2-2 Policy를 연결할 Role 생성 및 연결
 
+```
+aws iam create-role  --role-name [ROLE_NAME]  --assume-role-policy-document '{
+     "Version": "2012-10-17",
+     "Statement": [
+       {
+         "Effect": "Allow",
+         "Principal": {
+            "Service": "export.rds.amazonaws.com"
+          },
+         "Action": "sts:AssumeRole"
+       }
+     ] 
+   }'
+```
+* ROLE_NAME은 사용자가 정의
+
+```
+aws iam attach-role-policy  --policy-arn [POLICY_ARN]  --role-name [ROLE_NAME]
+```
+* ROLE_NAME은 위에서 사용자가 정의한 Role의 이름 입력
+* POLICY_ARN은 2-1 명령어로 생성한 Policy의 ARN을 넣어줘야함.
+-> AWS Console에서 확인 가능하며 아래의 CLI를 통해 확인 가능
+  
+```
+aws iam list-policies --query 'Policies[?PolicyName==`[POLICY_NAME]`].Arn'
+```
 
 4. 
 5. Kinesis Firehose
