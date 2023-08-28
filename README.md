@@ -245,7 +245,7 @@ aws rds describe-export-tasks
 * Data Lake의 Location을 지정. 
 * 모든 Raw Data가 담기는 Bucket의 특정 Prefix 입력
 
-#### 2. 첫 Crawler 생성
+#### 2. Data Lake Crawler 생성
 
 <img width="572" alt="03_Crawler_Config" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/ef233efb-7b56-46e3-b653-0867e6eae698">
 
@@ -271,7 +271,7 @@ aws rds describe-export-tasks
 
 * 생성을 완료했다면, Crawler Run
 
-#### 3. Crawler 실행 및 카탈로그 확인
+#### 4. Crawler 실행 및 카탈로그 확인
 
 <img width="872" alt="08_Crawler_Create_Table" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/106066c2-ef09-4ebd-84f6-9419e925271b">
 
