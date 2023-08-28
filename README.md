@@ -352,7 +352,7 @@ aws rds describe-export-tasks
 ```
 * 세분화된 권한을 위해 와일드 카드(*) 대신, 각각의 리소스에 대한 이름을 명시해 줘야함.
 
- 
+
 <img width="646" alt="04_job_detail_2" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/402facde-3849-4017-8f1c-1239fae8d5cb">
 
 * 사용된 script가 저장될 경로 및 작업이 이루어질 Temp Directory 그리고 Spark Log가 적재될 Bucket PATH를 설정
