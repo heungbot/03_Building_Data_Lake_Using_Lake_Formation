@@ -173,13 +173,14 @@ aws iam create-role  --role-name [ROLE_NAME]  --assume-role-policy-document '{
      ] 
    }'
 ```
-* ROLE_NAME은 사용자가 정의
+* [ROLE_NAME]은 사용자가 정의
 
 ```
 aws iam attach-role-policy  --policy-arn [POLICY_ARN]  --role-name [ROLE_NAME]
 ```
-* ROLE_NAME은 위에서 사용자가 정의한 Role의 이름 입력
-* POLICY_ARN은 2-1 명령어로 생성한 Policy의 ARN을 넣어줘야함.
+* [ROLE_NAME]은 위에서 사용자가 정의한 Role의 이름 입력
+* [POLICY_ARN]은 2-1 명령어로 생성한 Policy의 ARN을 넣어줘야함.
+
 -> AWS Console에서 확인 가능하며 아래의 CLI를 통해 확인 가능
   
 ```
