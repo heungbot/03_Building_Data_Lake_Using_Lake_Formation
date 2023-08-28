@@ -196,9 +196,17 @@ aws rds start-export-task \
 ```
 aws rds describe-export-tasks
 ```
+
 <img width="615" alt="스크린샷 2023-08-28 오후 9 00 33" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/f367b867-2172-49a1-b333-951db1836caf">
 
 <img width="627" alt="스크린샷 2023-08-28 오후 8 58 56" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/a2177adf-5ae3-4da9-b8cc-92a3ea64de48">
 
-4. 
-5. Kinesis Firehose
+* parquet format으로 S3 bucket에 적재 성공
+
+3. Kinesis Firehose
+
+<img width="665" alt="kinesis_create" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/21a5f539-1168-450f-9fb4-dbcdb8760754">
+
+* Kinesis을 테스트하기 위해 Direct PUT 방식을 선택(Kinesis Stream을 운영하고 있다면 Kinesis Stream 선택)
+* firehose의 TEST Data를 전송받기 위해 Data Lake로 사용될 S3 Bucket을 설정하고, 적절한 Prefix 입력
+
