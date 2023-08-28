@@ -196,7 +196,7 @@ aws rds start-export-task \
 ```
 aws rds describe-export-tasks
 ```
-<img width="689" alt="스크린샷 2023-08-28 오후 8 58 01" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/f576e5d0-d0c0-424e-8af6-bd647eb14f43">
+<img width="615" alt="스크린샷 2023-08-28 오후 9 00 33" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/f367b867-2172-49a1-b333-951db1836caf">
 
 <img width="627" alt="스크린샷 2023-08-28 오후 8 58 56" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/a2177adf-5ae3-4da9-b8cc-92a3ea64de48">
 
