@@ -82,6 +82,14 @@
 
 
 ### 03 Analysis
-1. Athena
-2. OpenSearch
 
+<img width="1417" alt="03_analysis" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/e201886a-30ff-4026-bdac-62aa3a5d9aac">
+
+#### 1. Athena : 저장된 데이터를 분석하기 위한 Serverless Query Service
+* 표준 SQL 언어를 사용하여 파일을 Query.
+* CSV, JSON, ORC, Parquet과 같은 파일 형식을 지원.
+
+#### 2. OpenSearch : 로그 분석, 실시간 애플리케이션 모니터링, 데이터 검색 등을 쉽게 수행할 수 있는 관리형 서비스.
+* Serverless가 아닌, Instance들의 Cluster임. 
+* SQL 언어를 사용하지 않고, 자체 언어 존재
+* DashBoard를 통해 검색 결과 시각화 
