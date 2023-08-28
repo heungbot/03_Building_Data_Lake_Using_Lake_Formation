@@ -217,12 +217,14 @@ aws rds describe-export-tasks
 #### 3-2 DEMO Data 전송
 
 <img width="673" alt="스크린샷 2023-08-29 오전 12 01 45" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/d003c5cc-4c4a-4a86-a568-a31efbae94da">
+
 * Kinesis Demo Data를 설정한 S3 Bucket으로 전송
 * 데이터 전송 후 몇 분(5분 내외) 정도 기다린 후 S3 Bucket 확인
+
 
 <img width="766" alt="object_in_bucket" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/08a1fcfa-de52-43c6-b8c3-74f64e702ad5">
 
 <img width="394" alt="object_info" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/c3a51756-29ad-4837-bed8-33c6366f5bba">
+
 * 설정한 Prefix로 DEMO Data 전송된 것을 확인할 수 있음
 * Kinesis firehose가 s3 bucket으로 데이터를 전송할 때, "yyyy/mm/dd/hh" (UTC) prefix를 추가함을 확인
-
