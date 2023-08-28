@@ -36,3 +36,8 @@
 * 확장성 및 탄력성 확보 및 데이터 사용에 대한 모니터링 요망
 
 * 사내 각 팀에게 조건에 맞는 필요 데이터만 접근할 수 있도록 세분화된 엑세스 권한 부여 요망
+
+***
+
+## [ 04 다이어 그램 ] 
+<img width="1401" alt="DataLake_diagram" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/4a2ee15c-0245-49ab-883b-f26d9326ac83">
