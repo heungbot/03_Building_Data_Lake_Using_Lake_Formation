@@ -355,7 +355,11 @@ aws rds describe-export-tasks
 * Script에서 사용된 라이브러리에 대한 zip 파일이 존재한다면, S3 내부의 File Path 설정
 * 설정 완료 후 ETL Job Run
 
- 
+<img width="620" alt="ETL_Script_Logs_Bucket" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/004f5c6d-3f8d-42b6-8601-164bc5d9e17f">
+
+* ETL 작업이 완료되면, 위에서 설정한 bucket PATH에 sciprt, log 폴더가 생성됨. 
+
+ 
 <img width="1157" alt="05_etl_job_monitoring" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/f494d327-42b3-4e80-bdb4-f5273fde4da8">
 
 * ETL 작업이 성공적으로 수행됨
@@ -366,8 +370,9 @@ aws rds describe-export-tasks
 * ETL Job의 Target Bucket 
 * Parquet 타입으로 데이터 형식이 바뀜을 확인할 수 있음
 
+*** 
 
-
+### [ 06-3 Anslysis ]
 
 
 
