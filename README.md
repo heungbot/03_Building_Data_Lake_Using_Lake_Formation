@@ -177,7 +177,7 @@ aws iam attach-role-policy  --policy-arn [POLICY_ARN]  --role-name [ROLE_NAME]
 aws iam list-policies --query 'Policies[?PolicyName==`[POLICY_NAME]`].Arn'
 ```
 
-##### 2-3 DB Snapshot 추출
+#### 2-3 DB Snapshot 추출
 * 작업을 수행하기 위해서 위에서 생성한 IAM Role ARN과 전송 중 암호화를 위한 KMS KEY ARN을 인자로 넣어줘야 함
 
 ```
