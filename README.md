@@ -235,16 +235,6 @@ aws rds describe-export-tasks
 
 ### [ 06-2 Lake Formation ]
 
-#### 1. Lake Formation 관리자 계정 등록
-
-#### 2. Data Lake 위치 등록
-
-#### 3. 첫 번째 Glue Crawler 생성
-
-#### 4. Crawler의 권한 승인
-
-[ Lake Formation]
-
 #### 1. Lake Formation 셋업
 <img width="1178" alt="01_LakeFormation_AdminUser_Location" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/1971fafd-f49a-4629-a94f-dd790c280a6d">
 * Lake Formation에 대한 Admin User를 등록해야 함. 이는 Root User가 아닌, IAM User를 등록
