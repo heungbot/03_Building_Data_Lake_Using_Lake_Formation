@@ -205,8 +205,24 @@ aws rds describe-export-tasks
 
 3. Kinesis Firehose
 
+#### 3-1 Kinesis Firehose 생성
+
 <img width="665" alt="kinesis_create" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/21a5f539-1168-450f-9fb4-dbcdb8760754">
 
 * Kinesis을 테스트하기 위해 Direct PUT 방식을 선택(Kinesis Stream을 운영하고 있다면 Kinesis Stream 선택)
 * firehose의 TEST Data를 전송받기 위해 Data Lake로 사용될 S3 Bucket을 설정하고, 적절한 Prefix 입력
+
+<img width="1143" alt="firehose_status_real" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/3390fde1-6118-498b-9e46-90b72579edb3">
+
+#### 3-2 DEMO Data 전송
+
+<img width="673" alt="스크린샷 2023-08-29 오전 12 01 45" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/d003c5cc-4c4a-4a86-a568-a31efbae94da">
+* Kinesis Demo Data를 설정한 S3 Bucket으로 전송
+* 데이터 전송 후 몇 분(5분 내외) 정도 기다린 후 S3 Bucket 확인
+
+<img width="766" alt="object_in_bucket" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/08a1fcfa-de52-43c6-b8c3-74f64e702ad5">
+
+<img width="394" alt="object_info" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/c3a51756-29ad-4837-bed8-33c6366f5bba">
+* 설정한 Prefix로 DEMO Data 전송된 것을 확인할 수 있음
+* Kinesis firehose가 s3 bucket으로 데이터를 전송할 때, "yyyy/mm/dd/hh" (UTC) prefix를 추가함을 확인
 
