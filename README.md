@@ -277,3 +277,90 @@ aws rds describe-export-tasks
 
 * Crawler의 실행이 끝나면, Catalog에 Schema, Partiion, Index에 대한 정보가 저장됨을 확인
 
+#### 5. Glue ETL Job
+
+<img width="1160" alt="01_Ingest" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/6448e61a-9cc4-4464-9411-825c821ea108">
+
+* ETL을 진행할 Source Data 선택 과정
+* Crawler로 생성된 Catalog Table을 선택
+
+<img width="1038" alt="02_transform" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/0267e62d-9b5f-40b5-b100-187d07d3926a">
+
+* Schema 변환과정
+* 특정 key의 이름을 변경하거나, Drop 시킬 수 있음.
+
+<img width="1290" alt="03_target" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/c9b884e9-04c7-4ffd-b584-980c7093d77f">
+
+* 변환 과정을 거친 Data를 적재할 곳을 선택
+* S3 bucket을 선택했으며 저장할 형식은 "Parquet"으로 선정
+* 실제 운영되는 데이터에 적용하는 것이었다면 압축을 진행
+
+<img width="506" alt="04_etl_job_script" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/8e0eac13-576e-42a2-8336-744541c9a819">
+
+*  변환 ETL 과정에 대한 Script. Visual ETL 보다 세부적인 조정 가능
+* 이는 수정하거나 "Job Detail"을 통해 작성된 Script 사용 가능
+
+<img width="689" alt="04_job_detail_1" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/dfa4323e-5e0e-4369-b1e6-88ed38a1da77">
+
+* Glue Version과 Type, Worker Node의 사양을 정할 수 있음.
+* Language는 Python, Scala를 지원함
+* ETL Job에 대한 IAM Role을 부여해야 함. 이 role은 source가 되는 Glue의 권한과 target인 s3에 대한 권한을 가져야 함.
+
+```
+{
+    "Version": "2022-08-28",
+    "Statement": [
+        {
+            "Sid": "AllowCatalogTableETL",
+            "Effect": "Allow",
+            "Action": [
+                "glue:GetTable",
+                "glue:GetPartition",
+                "glue:GetDatabase",
+                "glue:GetDatabaseTableVersions",
+                "glue:UpdateTable"
+            ],
+            "Resource": [
+                "arn:aws:glue:ap-northeast-2:[ACCOUNT_ID]:catalog/*",
+                "arn:aws:glue:ap-northeast-2:[ACCOUNT_ID]:database/*",
+                "arn:aws:glue:ap-northeast-2:[ACCOUNT_ID]:table/*",
+                "arn:aws:glue:ap-northeast-2:[ACCOUNT_ID]:partition/*"
+            ]
+        },
+        {
+            "Sid": "AllowTargetBucketAccess",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::[TARGET_BUCKET_NAME]/*"
+            ]
+        }
+    ]
+}
+```
+* 세분화된 권한을 위해 와일드 카드(*) 대신, 각각의 리소스에 대한 이름을 명시해 줘야함.
+
+<img width="646" alt="04_job_detail_2" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/402facde-3849-4017-8f1c-1239fae8d5cb">
+
+* 사용된 script가 저장될 경로 및 작업이 이루어질 Temp Directory 그리고 Spark Log가 적재될 Bucket PATH를 설정
+* Script에서 사용된 라이브러리에 대한 zip 파일이 존재한다면, S3 내부의 File Path 설정
+* 설정 완료 후 ETL Job Run
+
+<img width="1157" alt="05_etl_job_monitoring" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/f494d327-42b3-4e80-bdb4-f5273fde4da8">
+
+* ETL 작업이 성공적으로 수행됨
+
+<img width="721" alt="06_Job_Monitoring_Result_Bucket" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/7f62235c-d6c0-42f6-a1b9-5c933870ae7a">
+
+* ETL Job의 Target Bucket 
+* Parquet 타입으로 데이터 형식이 바뀜을 확인할 수 있음
+
+
+
+
+
+
+
