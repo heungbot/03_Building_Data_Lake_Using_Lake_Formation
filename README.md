@@ -119,7 +119,7 @@
 * RDS의 Snapshot을 S3 Bucket으로 내보내기 위해선 S3 bucket에 대한 권한이 필요함
 
 
-##### 2-1. Snapshot Export을 위한 IAM Policy 생성
+#### 2-1. Snapshot Export을 위한 IAM Policy 생성
 
 
 ```
@@ -147,7 +147,7 @@ aws iam create-policy  --policy-name [POLICY_NAME] --policy-document '{
 * 위 명령어에서 [BUCKET_NAME] 부분과 [POLICY_NAME]은 사용자가 직업 입력 
 
 
-##### 2-2 Policy를 연결할 Role 생성 및 연결
+#### 2-2 Policy를 연결할 Role 생성 및 연결
 
 ```
 aws iam create-role  --role-name [ROLE_NAME]  --assume-role-policy-document '{
