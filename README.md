@@ -154,7 +154,7 @@ aws iam create-policy  --policy-name [POLICY_NAME] --policy-document '{
     ]
 }'
 ```
-* 위 명령어에서 BUCKET_NAME 부분과 POLICY_NAME은 사용자가 직업 입력 
+* 위 명령어에서 [BUCKET_NAME] 부분과 [POLICY_NAME]은 사용자가 직업 입력 
 
 
 2-2 Policy를 연결할 Role 생성 및 연결
@@ -186,6 +186,18 @@ aws iam attach-role-policy  --policy-arn [POLICY_ARN]  --role-name [ROLE_NAME]
 ```
 aws iam list-policies --query 'Policies[?PolicyName==`[POLICY_NAME]`].Arn'
 ```
+
+2-3 DB Snapshot 추출
+
+```
+aws rds start-export-task \
+    --export-task-identifier [SNAPSHOT_EXTRACT_TASK_IDENTIFIER] \
+    --source-arn arn:aws:rds:[AWS_REGION]:[ACCOUNT_ID]:snapshot:[SNAPSHOT_NAME] \
+    --s3-bucket-name [BUCKET_NAME] \
+    --iam-role-arn [ROLE_ARN] \
+    --kms-key-id [KMS_KET_ID]
+```
+
 
 4. 
 5. Kinesis Firehose
