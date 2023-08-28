@@ -230,3 +230,8 @@ aws rds describe-export-tasks
 
 * 설정한 Prefix로 DEMO Data 전송된 것을 확인할 수 있음
 * Kinesis firehose가 s3 bucket으로 데이터를 전송할 때, "yyyy/mm/dd/hh" (UTC) prefix를 추가함을 확인
+
+*** 
+
+### [ 06-2 Lake Formation ]
+
