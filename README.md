@@ -42,10 +42,6 @@
 ## [ 04 다이어 그램 ] 
 <img width="1401" alt="DataLake_diagram" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/4a2ee15c-0245-49ab-883b-f26d9326ac83">
 
-
-## [ 04 다이어 그램 ] 
-<img width="1401" alt="DataLake_diagram" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/4a2ee15c-0245-49ab-883b-f26d9326ac83">
-
 ## [ 05 핵심 서비스 ]
 
 ### 01 Ingest
