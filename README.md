@@ -382,6 +382,18 @@ aws rds describe-export-tasks
 
 ### [ 06-3 Anslysis ]
 
+<img width="608" alt="01_athena_query_command" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/bab18ed8-f211-40fd-93e5-179dbe5a9db5">
 
+* ETL 작업을 거친 Catalog를 대상으로 간단한 SQL Query 구문을 실행
+  
+```
+SELECT *
+FROM "real_time_parquet"
+WHERE "price" > 100 AND "price" < 200;
 
+```
+
+<img width="1025" alt="02_athena_query_result" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/0133e7c1-7741-49ac-8289-db5aba91568e">
+
+* query 결과, 조건에 맞는 데이터들이 추출됨을 확인
 
