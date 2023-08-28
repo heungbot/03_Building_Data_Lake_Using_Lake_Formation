@@ -235,3 +235,48 @@ aws rds describe-export-tasks
 
 ### [ 06-2 Lake Formation ]
 
+#### 1. Lake Formation 관리자 계정 등록
+
+#### 2. Data Lake 위치 등록
+
+#### 3. 첫 번째 Glue Crawler 생성
+
+#### 4. Crawler의 권한 승인
+
+[ Lake Formation]
+
+#### 1. Lake Formation 셋업
+<img width="1178" alt="01_LakeFormation_AdminUser_Location" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/1971fafd-f49a-4629-a94f-dd790c280a6d">
+* Lake Formation에 대한 Admin User를 등록해야 함. 이는 Root User가 아닌, IAM User를 등록
+
+<img width="662" alt="02_Create_First_Database" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/a4fbb0df-40c2-4b48-97a6-945e81a893ad">
+* Data Lake의 Location을 지정. 
+* 모든 Raw Data가 담기는 Bucket의 특정 Prefix 입력
+
+#### 2. 첫 Crawler 생성
+
+<img width="572" alt="03_Crawler_Config" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/ef233efb-7b56-46e3-b653-0867e6eae698">
+* 현재 로그인된 User의 Bucket에 대해 Crawler를 실행시킬 것이므로 Bucket Path 입력
+* Bucket Path의 내부 경로를 모두 크롤링 하기 위해 "Crawl all-sub-folders" 선택
+
+<img width="986" alt="04_Crawler_Role" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/f0bcda10-49c3-4997-aea8-f5539384638b">
+* Crawler에 대한 권한 생성 후 선택
+* Lake Formation의 Credential을 사용하여 Crawling 진행하고자 하므로 옵션 선택
+
+#### 3. Crawler의 권한 승인
+
+<img width="721" alt="06_Crawler_Permission_Grant" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/aa0fa421-85d0-4d62-8876-f4099e72d3bc">
+
+<img width="711" alt="05_Crawler_Role_Grant" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/31358336-871c-43f7-8608-25a510af0c04">
+* Crawler의 Role에 대한 권한 승인
+* LF-Tags를 사용하지 않으므로, 승인할 database와 table 선택
+* table을 대상으로 어떤 액세스 권한을 줄 것인지 선택
+
+<img width="1164" alt="07_Crawler_run" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/9304b7e4-d1d6-4d4e-a64f-3bf76944130a">
+* 생성을 완료했다면, Crawler Run
+
+#### 3. Crawler 실행 및 카탈로그 확인
+
+<img width="872" alt="08_Crawler_Create_Table" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/106066c2-ef09-4ebd-84f6-9419e925271b">
+* Crawler의 실행이 끝나면, Catalog에 Schema, Partiion, Index에 대한 정보가 저장됨을 확인
+
