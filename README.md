@@ -144,7 +144,7 @@ aws iam create-policy  --policy-name [POLICY_NAME] --policy-document '{
     ]
 }'
 ```
-* 위 명령어에서 [BUCKET_NAME] 부분과 [POLICY_NAME]은 사용자가 직업 입력 
+* 위 명령어에서 [BUCKET_NAME] 부분과 [POLICY_NAME]은 사용자가 정의
 
 
 #### 2-2 Policy를 연결할 Role 생성 및 연결
