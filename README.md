@@ -370,7 +370,6 @@ aws rds describe-export-tasks
 
 * ETL 작업이 완료되면, 위에서 설정한 bucket PATH에 sciprt, log 폴더가 생성됨. 
 
- 
 <img width="721" alt="06_Job_Monitoring_Result_Bucket" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/7f62235c-d6c0-42f6-a1b9-5c933870ae7a">
 
 * ETL Job의 Target Bucket 
