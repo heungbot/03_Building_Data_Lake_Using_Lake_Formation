@@ -49,6 +49,9 @@
 ## [ 05 핵심 서비스 ]
 
 ### 01 Ingest
+
+<img width="1417" alt="01_ingest" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/62b2c069-ae2d-4237-9b72-1ad758930ab5">
+
 #### 1. Storage Gateway : Cloud 기반 스토리지와 On premise를 연결하여 데이터 동합을 제공하는 서비스.
 
 #### 2. DB Snaphost : 특정 시점의 DB의 상태를 파일이나 이미지로 저장
@@ -61,6 +64,9 @@
 
 
 ### 02 Data Lake
+
+<img width="1409" alt="02_lake_formation" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/a7ee61ea-21ec-487e-a1c9-2e69f767b028">
+
 #### 0. Data Lake : 분석 목적을 위해 모든 데이터를 한 곳에 모아주는 중앙 집중식 저장소
 
 #### 1. Lake Formation : 데이터 분석 및 기계학습을 위한 데이터를 중앙에서 관리하고, 보호할 수 있는 완전 관리형 Serverless 서비스
