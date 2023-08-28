@@ -203,7 +203,9 @@ aws rds describe-export-tasks
 
 * parquet format으로 S3 bucket에 적재 성공
 
-3. Kinesis Firehose
+***
+
+#### 3. Kinesis Firehose
 
 #### 3-1 Kinesis Firehose 생성
 
