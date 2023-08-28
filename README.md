@@ -188,6 +188,7 @@ aws iam list-policies --query 'Policies[?PolicyName==`[POLICY_NAME]`].Arn'
 ```
 
 2-3 DB Snapshot 추출
+* 작업을 수행하기 위해서 위에서 생성한 IAM Role ARN과 전송 중 암호화를 위한 KMS KEY ARN을 인자로 넣어줘야 함
 
 ```
 aws rds start-export-task \
@@ -195,8 +196,16 @@ aws rds start-export-task \
     --source-arn arn:aws:rds:[AWS_REGION]:[ACCOUNT_ID]:snapshot:[SNAPSHOT_NAME] \
     --s3-bucket-name [BUCKET_NAME] \
     --iam-role-arn [ROLE_ARN] \
-    --kms-key-id [KMS_KET_ID]
+    --kms-key-id [KMS_KEY_ARN] \
+    -- S3-prefix [BUCKET_PREFIX/]
 ```
+* [SNAPSHOT_EXTRACT_TASK_IDENTIFIER], [SNAPSHOT_NAME]은 사용자가 정의. 나머지 인자들은 실제 Value로 넣어줘야 함.
+* [BUCKET_PERFIX] 옵션은 선택이며, 나머지 인자는 필수적
+* Snapshot을 추출하는 데는 시간이 소요되므로 아래의 명령어를 통해 현 진행 상황을 파악할 수 있음.
+```
+aws rds describe-export-tasks
+```
+2-4. 
 
 
 4. 
