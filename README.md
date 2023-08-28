@@ -108,7 +108,7 @@
 1. Storage Gateway 
 * Storage Gateway를 이용하여 On Premise의 데이터를 S3로 적재하는 것은 [02_Hybrid_Data_integration_using_File_Gateway] 프로젝트에서 구현
   
-[ Github Link] https://github.com/heungbot/02_Hybrid_Data_integration_using_File_Gateway
+[ Github Link ] https://github.com/heungbot/02_Hybrid_Data_integration_using_File_Gateway
 
 
 3. DB Snapshot 
