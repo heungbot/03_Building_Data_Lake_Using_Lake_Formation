@@ -98,3 +98,17 @@
 * Serverless가 아닌, Instance들의 Cluster임. 
 * SQL 언어를 사용하지 않고, 자체 언어 존재
 * DashBoard를 통해 검색 결과 시각화 
+
+***
+
+## [ 06 구현 과정 ]
+
+### [ 06-1 Ingest ] 
+
+1. Storage Gateway 
+* Storage Gateway를 이용하여 On Premise의 데이터를 S3로 적재하는 것은 [02_Hybrid_Data_integration_using_File_Gateway] 프로젝트에서 구현
+https://github.com/heungbot/02_Hybrid_Data_integration_using_File_Gateway
+
+
+3. DB Snapshot 
+4. Kinesis Firehose
