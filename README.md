@@ -408,11 +408,23 @@ WHERE "price" > 100 AND "price" < 200;
 <img width="1208" alt="스크린샷 2023-08-29 오후 3 11 44" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/80c7a467-5b0a-477b-a3cc-03e5e78d020f">
 
 * CloudTrail의 이벤트 기록
+* Event 이름 / Event 시간 / 사용자 이름 / 이벤트 소스 으로 구성됨
 
 <img width="1212" alt="스크린샷 2023-08-29 오후 3 12 53" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/22e586cd-d881-41e3-9723-d3cd6c1d99ed">
 
 * 필터를 통해 특정 User에 대한 API 사용 추적 가능
 
 
+#### 2. CloudWatch : 클라우드 리소스와 AWS에서 실행되는 애플리케이션을 위한 AWS 모니터링 서비스
 
-#### 2. CloudWatch : 
+* Metric 수집 및 추적, 로그 파일을 수집 및 모니터링
+* 제공된 Metric을 변수로 설정하여, 하드웨어의 사용량에 따른 모니터링 가능
+* 기본 제공되는 Metric 외에, RAM 사용량과 같은 사용자 정의 Metric 생성 가능
+
+<img width="1015" alt="Log_Groups" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/7836b768-f6e4-49cf-aaa3-c9d74a173ed4">
+
+* Data Lake를 구축하며 사용한 Service 들의 Log group
+
+<img width="744" alt="Metric_Monitoring" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/8441621e-cc00-4c2b-91d1-07369e24cc7e">
+
+* GlueETL을 진행하며 사용한 Resource 사용량을 시각화함
