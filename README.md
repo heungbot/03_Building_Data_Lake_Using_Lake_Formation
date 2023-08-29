@@ -397,3 +397,22 @@ WHERE "price" > 100 AND "price" < 200;
 
 * query 결과, 조건에 맞는 데이터들이 추출됨을 확인
 
+### [ 07 모니터링 ]
+
+#### 1. CloudTrail : AWS Account에 대해 활동 및 API 사용을 추적하여 보안 모니터링, 감사 등의 운영을 지원하는 서비스
+* AWS 인프라 전체에서 작업과 관련된 계정 활동에 대해 지속적인 로깅 및 모니터링
+* 기본적으로 "Enabled" 되어 있음.
+* CloudTrail의 Log들을 CloudWatch의 Log나 S3 bucket에 담을 수 있음
+
+
+<img width="1208" alt="스크린샷 2023-08-29 오후 3 11 44" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/80c7a467-5b0a-477b-a3cc-03e5e78d020f">
+
+* CloudTrail의 이벤트 기록
+
+<img width="1212" alt="스크린샷 2023-08-29 오후 3 12 53" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/22e586cd-d881-41e3-9723-d3cd6c1d99ed">
+
+* 필터를 통해 특정 User에 대한 API 사용 추적 가능
+
+
+
+#### 2. CloudWatch : 
