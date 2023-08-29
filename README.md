@@ -423,7 +423,8 @@ WHERE "price" > 100 AND "price" < 200;
 
 <img width="1015" alt="Log_Groups" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/7836b768-f6e4-49cf-aaa3-c9d74a173ed4">
 
-* Data Lake를 구축하며 사용한 Service 들의 Log group
+* Data Lake를 구축하며 사용한 Glue Service에 대한 Log group
+
 
 <img width="744" alt="Metric_Monitoring" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/8441621e-cc00-4c2b-91d1-07369e24cc7e">
 
