@@ -397,6 +397,8 @@ WHERE "price" > 100 AND "price" < 200;
 
 * query 결과, 조건에 맞는 데이터들이 추출됨을 확인
 
+***
+
 ### [ 07 모니터링 ]
 
 #### 1. CloudTrail : AWS Account에 대해 활동 및 API 사용을 추적하여 보안 모니터링, 감사 등의 운영을 지원하는 서비스
