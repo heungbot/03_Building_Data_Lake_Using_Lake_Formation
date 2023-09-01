@@ -43,7 +43,7 @@
 <img width="1401" alt="DataLake_diagram" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/4a2ee15c-0245-49ab-883b-f26d9326ac83">
 
 * Ingset 영역에서 DMS, Data Sync, 다른 Kinesis 서비스 등을 사용 가능
-* ETL 과정에서 Glue만 사용했지만 EMR도 고려 가능함. 또한 Glue ETL 작업을 Wrokflow를 통해 제어 및 On-demand 방식이 아닌 특정 조건에 따라 실행도 가능
+* ETL 과정에서 Glue만 사용했지만 EMR도 고려 가능함. 또한 Glue ETL 작업을 Wrokflow를 통해 제어 및 On-demand 방식이 아닌 특정 조건에 따라 실행도 가능
 * Analysis 영역에서 ML을 진행할 때 Sage Maker를 고려할 수 있으며, Athena의 결과를 QuickSight를 통해 시각화 가능
 
 
@@ -280,14 +280,14 @@ aws rds describe-export-tasks
 
 ***
 
-#### 5. ETL JOB Source 선택
+#### 5. ETL JOB Source 선택
 
 <img width="1160" alt="01_Ingest" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/6448e61a-9cc4-4464-9411-825c821ea108">
 
 * ETL을 진행할 Source Data 선택 과정
 * Crawler로 생성된 Catalog Table을 선택
 
-#### 6. ETL Transforming 구성
+#### 6. ETL Transforming 구성
  
 <img width="1038" alt="02_transform" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/0267e62d-9b5f-40b5-b100-187d07d3926a">
 
@@ -314,7 +314,7 @@ aws rds describe-export-tasks
 <img width="689" alt="04_job_detail_1" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/dfa4323e-5e0e-4369-b1e6-88ed38a1da77">
 
 * Glue Version과 Type, Worker Node의 사양을 정할 수 있음.
-* Language는 Python, Scala를 지원함
+* Language는 Python, Scala를 지원함
 * ETL Job에 대한 IAM Role을 부여해야 함. 이 role은 source가 되는 Glue의 권한과 target인 s3에 대한 권한을 가져야 함.
 
 
@@ -380,7 +380,7 @@ aws rds describe-export-tasks
 
 *** 
 
-### [ 06-3 Anslysis ]
+### [ 06-3 Anslysis ]
 
 <img width="608" alt="01_athena_query_command" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/bab18ed8-f211-40fd-93e5-179dbe5a9db5">
 
