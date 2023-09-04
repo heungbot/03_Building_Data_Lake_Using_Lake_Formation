@@ -1,6 +1,6 @@
-# Build Data Lake by using Lake Formation and Glue
+## Build Data Lake by using Lake Formation and Glue
 
-## [ 01 프로젝트 설명 ]
+## 📄 프로젝트 설명
 프로젝트 명 : Lake Formation을 이용한 권한 세분화 데이터 레이크 구축
 
 프로젝트 인원 : 1명
@@ -13,7 +13,26 @@
 
 ***
 
-## [ 02 클라이언트 상황 ]
+
+## 📃 목차
+
+[01. 클라이언트 상황 가정 ](#-01-클라이언트-상황-가정-)
+
+[02. 요구사항 정의 ](#-02-요구사항-정의-)
+
+[03. 다이어그램 ](#-03-다이어그램-)
+
+[04. 핵심 서비스 소개 ](#-04-핵심-서비스-소개-)
+
+[05. Interface Endpoint 구현 과정 ](#-05-interface-endpoint-구현-과정-)
+
+[06. Storage Gateway 구현 과정 ](#-06-storage-gateway-구현-과정-)
+
+[07. 테스트 및 결과 ](#-07-테스트-및-결과-)
+
+***
+
+## [ 01 클라이언트 상황 가정 ]
 
 * IDC 중 일부를 임대하여, 자사와 먼 거리에 6대 이상 운영중
 
@@ -27,7 +46,7 @@
 
 ***
 
-## [ 03 요구사항 ]
+## [ 02 요구사항 정의 ]
 
 * 온프레미스, 클라우드에 존재하는 데이터를 하나의 스토리지에 저장
 
@@ -39,7 +58,7 @@
 
 ***
 
-## [ 04 다이어 그램 ] 
+## [ 03 다이어그램 ] 
 <img width="1401" alt="DataLake_diagram" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/4a2ee15c-0245-49ab-883b-f26d9326ac83">
 
 * Ingset 영역에서 DMS, Data Sync, 다른 Kinesis 서비스 등을 사용 가능
@@ -49,7 +68,7 @@
 
 ***
 
-## [ 05 핵심 서비스 ]
+## [ 04 핵심 서비스 소개 ]
 
 ### 01 Ingest
 
@@ -101,9 +120,9 @@
 
 ***
 
-## [ 06 구현 과정 ]
+## [ 05 구현 과정 ]
 
-### [ 06-1 Ingest ] 
+### [ 05-1 Ingest ] 
 
 #### 1. Storage Gateway 
 * Storage Gateway를 이용하여 On Premise의 데이터를 S3로 적재하는 것은 [02_Hybrid_Data_integration_using_File_Gateway] 프로젝트에서 구현
@@ -234,7 +253,7 @@ aws rds describe-export-tasks
 
 *** 
 
-### [ 06-2 Lake Formation ]
+### [ 05-2 Lake Formation ]
 
 #### 1. Lake Formation 셋업
 <img width="1178" alt="01_LakeFormation_AdminUser_Location" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/1971fafd-f49a-4629-a94f-dd790c280a6d">
@@ -362,7 +381,7 @@ aws rds describe-export-tasks
 * Script에서 사용된 라이브러리에 대한 zip 파일이 존재한다면, S3 내부의 File Path 설정
 * 설정 완료 후 ETL Job Run
 
-#### 8. ETL JOB 실행 및 결과
+### 8. ETL JOB 실행 및 결과
 
  
 <img width="1157" alt="05_etl_job_monitoring" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/f494d327-42b3-4e80-bdb4-f5273fde4da8">
@@ -380,7 +399,7 @@ aws rds describe-export-tasks
 
 *** 
 
-### [ 06-3 Anslysis ]
+### [ 05-3 Anslysis ]
 
 <img width="608" alt="01_athena_query_command" src="https://github.com/heungbot/03_Building_Data_Lake_Using_Lake_Formation/assets/97264115/bab18ed8-f211-40fd-93e5-179dbe5a9db5">
 
@@ -399,7 +418,7 @@ WHERE "price" > 100 AND "price" < 200;
 
 ***
 
-### [ 07 모니터링 ]
+### [ 06 모니터링 ]
 
 #### 1. CloudTrail : AWS Account에 대해 활동 및 API 사용을 추적하여 보안 모니터링, 감사 등의 운영을 지원하는 서비스
 * AWS 인프라 전체에서 작업과 관련된 계정 활동에 대해 지속적인 로깅 및 모니터링
