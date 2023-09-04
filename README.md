@@ -1,4 +1,4 @@
-## Build Data Lake by using Lake Formation and Glue
+## Build Data Lake by using Lake Formation
 
 ***
 
