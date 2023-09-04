@@ -1,5 +1,7 @@
 ## Build Data Lake by using Lake Formation and Glue
 
+***
+
 ## 📄 프로젝트 설명
 프로젝트 명 : Lake Formation을 이용한 권한 세분화 데이터 레이크 구축
 
